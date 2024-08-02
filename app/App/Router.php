@@ -28,10 +28,16 @@ class Router
 
     foreach (self::$routes as $route) {
       if ($path == $route['path'] && $method == $route['method']) {
-        echo "CONTROLLER: " . $route['controller'] . ", FUNCTION: " . $route['function'];
+        // echo "CONTROLLER: " . $route['controller'] . ", FUNCTION: " . $route['function'];
+
+        $controller = new $route['controller'];
+        $function = $route['function'];
+        $controller->$function();
+
         return;
       }
     }
+
 
     http_response_code(404);
     echo "CONTROLLER NOT FOUND";
