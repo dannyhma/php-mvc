@@ -8,7 +8,7 @@ class HomeController
   {
     $model = [
       "title" => "Home",
-      'content' => "Belajar PHP MVC"
+      "content" => "Belajar PHP MVC"
     ];
     echo "HomeController.index()";
   }
