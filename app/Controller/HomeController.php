@@ -2,15 +2,19 @@
 
 namespace Himaone\PhpMvc\Controller;
 
+use Himaone\PhpMvc\App\View;
+
 class HomeController
 {
   function index(): void
   {
     $model = [
       "title" => "Home",
-      "content" => "Belajar PHP MVC"
+      "content" => "Belajar PHP MVC PZN"
     ];
-    echo "HomeController.index()";
+    // echo "HomeController.index()";
+    // require __DIR__ . '/../View/Home/index.php';
+    View::render('Home/index', $model);
   }
   function hello(): void
   {
